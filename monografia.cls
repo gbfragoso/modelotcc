@@ -1,17 +1,5 @@
 % MONOGRAFIA.CLS
 %
-%
-%   Licence: LPPL (LaTeX Project Public License)
-%     You can change this file in the terms of LPPL
-%     (http://www.latex-project.org/lppl.html)
-% 
-%   Licenca: LPPL (LaTeX Project Public License)
-%     Esta licenca diz basicamente que se voce editar o codigo desta
-%     classe, mesmo localmente (no seu micro), voce DEVE RENOMEAR o arquivo
-%     da classe!! Como sempre, nao eh dada nenhuma garantia.
-%     Para o texto completo da licenca, favor seguir o endereco
-%        http://www.latex-project.org/lppl.html
-%
 %   Classe para confeccao de monografias, dissertacoes e tese
 %   de acordo com as normas da exigidas pela Universidade Federal
 %   do Maranhao, tendo com parametro as diretrizes da Associacao Brasileira 
@@ -41,22 +29,6 @@
 %% 
 %% This file was generated from file(s) of the LaTeX base system.
 %% --------------------------------------------------------------
-%% 
-%% It may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.2
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%    http://www.latex-project.org/lppl.txt
-%% and version 1.2 or later is part of all distributions of LaTeX
-%% version 1999/12/01 or later.
-%% 
-%% This file may only be distributed together with a copy of the LaTeX
-%% base system. You may however distribute the LaTeX base system without
-%% such generated files.
-%% 
-%% The list of all files belonging to the LaTeX base distribution is
-%% given in the file `manifest.txt'. See also `legal.txt' for additional
-%% information.
 %% 
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
