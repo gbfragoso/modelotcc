@@ -1,0 +1,174 @@
+\NeedsTeXFormat{LaTeX2e}
+%-----------------------------------------------------------
+\documentclass[a4paper,12pt]{monografia}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{indentfirst}
+\usepackage{hyphenat}
+\usepackage{csquotes}
+\usepackage{courier}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[
+backend=biber,
+style=alphabetic,
+citestyle=authoryear
+]{biblatex}
+
+% Estilo para trechos de códigos
+\definecolor{codebg}{RGB}{240,240,240}
+\lstdefinestyle{codigo}{
+    backgroundcolor=\color{codebg},
+    keywordstyle=\color{blue},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=codigo}
+
+\addbibresource{biblio.bib}
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+
+% Comando para imagens onde se deve destacar a fonte
+\newcommand*{\captionsource}[2]{%
+  \caption[{#1}]{%
+    #1%
+    \\\hspace{\linewidth}%
+    \textbf{Fonte:} #2%
+  }%
+}
+
+%\usepackage[hidelinks]{hyperref}
+%-----------------------------------------------------------
+\begin{document}
+%-----------Título e Dados do Autor---------------------------
+\titulo{COLOQUE SEU TÍTULO AQUI}
+%\subtitulo{Subtítulo} % opcional
+\autor{SEU NOME AQUI} \nome{Primeironome} \ultimonome{Ultimonome}
+%
+%-----------Informe o Curso e Grau----------------------------
+\bacharelado \curso{Bacharelado em Ciência da Computação} \ano{\textbf{2017}}
+\data{16/02/2017} % data da aprovação
+\cidade{Cidade}
+\estado{Estado}
+%
+%-----------Informações sobre a Instituição-------------------
+\instituicao{UNIVERSIDADE ESTADUAL DE SANTA CRUZ} \sigla{UESC}
+\unidadeacademica{DEPARTAMENTO DE CIÊNCIAS EXATAS E TECNOLÓGICAS}
+
+%-----------Informações obtidas na Biblioteca-----------------
+%\CDU{XXX.XX} \areas{1.???  2.???}
+%\npaginas{xx}  % total de páginas do trabalho
+%------Nomes do Orientador, 1o. Examinador e 2o. Examinador-
+\orientador{Orientador}
+%
+%\coorientador{Nome do Co-orientador} % opcional
+%
+\examinadorum{Examinador 1}
+%
+\examinadordois{Examinador 2}
+%
+%\examinadortres{Nome do Examinador 3}
+%
+%\examinadorquatro{Nome do Examinador 4}
+%--------- Títulos do Orientador 1o. e 2o. Examinadores ----
+\ttorientador{Doutor}
+%
+%\ttcoorientador{Título do Co-orientador} % se digitado \coorientador
+%
+\ttexaminadorum{Doutor}
+%
+\ttexaminadordois{Doutor}
+%
+%\ttexaminadortres{Título do Examinador 3}
+%
+%\ttexaminadorquatro{Título do Examinador 4}
+%
+%--------- Funções do 1o. e 2o. Examinadores ---------------
+\funcaoexaminadorum{Professor da Disciplina}
+\funcaoexaminadordois{Professor do Curso de Ciência da Computação}
+%
+\maketitle
+
+%-----------Dedicatória (Opcional)--------------------------
+\begin{dedicatoria}
+Dedico à minha família, por todo o apoio e confiança.
+\end{dedicatoria}
+
+\maketitle
+
+%-----------Agradecimentos (Opcional)-----------------------
+%\agradecimento{AGRADECIMENTOS}
+% Digite seu texto de agradecimento aqui
+%\newpage
+% ou inclua um arquivo .tex como mostrado abaixo
+\include{agradecimentos}
+\newpage
+
+%-----------Epígrafe (Opcional)-----------------------------
+%\begin{epigrafe}
+%``Lembra que o sono é sagrado e alimenta de horizontes o tempo acordado de viver''.\\
+%\hfill Beto Guedes (Amor de Índio)
+%\end{epigrafe}
+
+%-----------Digite aqui o seu resumo em Português-----------
+%resumo{Resumo}
+%\noindent Palavras-chave:
+\input{resumo}
+%
+%-----------Digite aqui o seu resumo em Inglês--------------
+%\resumo{Abstract} 
+%\noindent Keywords:
+\input{abstract}
+%
+%-----------Ou digite aqui o seu resumo em Frances----------
+%\resumo{Résumé} 
+%\noindent Mots-clés: 
+
+%-----------Sumário, lista de figura e de tabela------------
+\listoffigures \thispagestyle{empty}
+%\listoftables \thispagestyle{empty}
+\tableofcontents
+
+%-----------Início do Conteúdo------------------------------
+\pagestyle{ruledheader}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Hifenização - Colocar lista de palavras que não devem ser separadas ou que não estão no dicionario português.
+% As palavras do dicionario português já são separadas corretamente pelo LateX
+%
+\hyphenation{ Hardware Software }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% A partir daqui coloque seus capítulos. Sugere-se que eles sejam inseridos com o comando \input
+%% Da seguinte maneira:
+
+\input{cap01_introducao} 				    % Capítulo Introdução
+%\input{cap_revisao_literatura}             % Capítulo Revisão de Literatura
+\input{cap02_estadoarte}		            % Capítulo Estado da arte
+\input{cap03_materiaismetodos}			    % Capítulo Desenvolvimento
+\input{cap04_resultados}                    % Capítulo Resultados e Discussões
+\input{cap05_conclusoes}				    % Capítulo Conclusões
+
+%------------------------------Bibliografia-------------------------------------
+
+%\bibliographystyle{abnt-alf}
+\printbibliography % arquivos com as entradas bib.
+
+%------------------------------Apêndices----------------------------------------
+\appendix
+\input{apendices}					
+
+\end{document}
