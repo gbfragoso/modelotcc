@@ -13,9 +13,14 @@
 \usepackage{color}
 \usepackage[toc,acronym]{glossaries}
 
-% === Workaraound para ABNT
+% === Workaround para referências ABNT (Deve-se colocar os sobrenomes em maiúscula no .bib)
 \usepackage[backend=biber, style=authortitle]{biblatex}
+%\usepackage[hidelinks]{hyperref} % Torna os links da referência clicáveis
 \setlength{\bibhang}{0pt}
+
+% === Adição do arquivo de bibliografia
+\addbibresource{biblio.bib}
+%\renewcommand*{\nameyeardelim}{\addcomma\space} % estitlização para citações autor/ano
 
 % === Estilo para trechos de códigos
 \definecolor{codebg}{RGB}{240,240,240}
@@ -42,10 +47,6 @@
 %\input{abreviaturas}
 %\input{glossario}
 
-% === Adição do arquivo de bibliografia
-\addbibresource{biblio.bib}
-%\renewcommand*{\nameyeardelim}{\addcomma\space} % estitlização para citações autor/ano
-
 % === Comando para imagens onde se deve destacar a fonte
 \newcommand*{\captionsource}[2]{%
   \caption[{#1}]{%
@@ -55,8 +56,6 @@
   }%
 }
 
-%\usepackage[hidelinks]{hyperref}
-
 \begin{document}
 
 % === Título e Dados do Autor 
@@ -65,8 +64,8 @@
 \autor{SEU NOME AQUI} \nome{Primeironome} \ultimonome{Ultimonome}
 
 % === Curso e Grau
-\bacharelado \curso{Bacharelado em Ciência da Computação} \ano{\textbf{2017}}
-\data{16/02/2017} % data da aprovação
+\bacharelado \curso{Bacharelado em Ciência da Computação} \ano{\textbf{YYYY}}
+\data{DD/MM/YYYY} % data da aprovação
 \cidade{Cidade}
 \estado{Estado}
 
