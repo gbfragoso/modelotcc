@@ -276,10 +276,10 @@
 \def\grau#1{\gdef\@grau{#1}}
 \def\tipo#1{\gdef\@tipo{#1}}
 \def\bacharelado{\grau{bacharel} \tipo{Trabalho de conclus\~ao}}
-\def\licenciatura{\grau{LICENCIADO} \tipo{Monografia}}
-\def\especializacao{\grau{ESPECIALISTA} \tipo{Monografia}\es@ptrue}
-\def\mestrado{\grau{MESTRE} \tipo{Disserta\c{c}\~{a}o}\ps@dtrue}
-\def\doutorado{\grau{DOUTOR} \tipo{Tese}\ph@dtrue \ps@dtrue}
+\def\licenciatura{\grau{licenciado} \tipo{Monografia}}
+\def\especializacao{\grau{especialista} \tipo{Monografia}\es@ptrue}
+\def\mestrado{\grau{mestre} \tipo{Disserta\c{c}\~{a}o}\ps@dtrue}
+\def\doutorado{\grau{doutor} \tipo{Tese}\ph@dtrue \ps@dtrue}
 \def\autor#1{\gdef\@autor{#1}}
 \def\titulo#1{\gdef\@titulo{#1}}
 \def\subtitulo#1{\gdef\@subtitulo{#1}\sb@ttrue} 
