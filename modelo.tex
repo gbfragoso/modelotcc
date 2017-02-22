@@ -12,7 +12,10 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage[toc,acronym]{glossaries}
-\usepackage[backend=biber, style=alphabetic, citestyle=authoryear]{biblatex}
+
+% === Workaraound para ABNT
+\usepackage[backend=biber, style=authortitle]{biblatex}
+\setlength{\bibhang}{0pt}
 
 % === Estilo para trechos de códigos
 \definecolor{codebg}{RGB}{240,240,240}
@@ -41,7 +44,7 @@
 
 % === Adição do arquivo de bibliografia
 \addbibresource{biblio.bib}
-\renewcommand*{\nameyeardelim}{\addcomma\space} % estitlização para citações autor/ano
+%\renewcommand*{\nameyeardelim}{\addcomma\space} % estitlização para citações autor/ano
 
 % === Comando para imagens onde se deve destacar a fonte
 \newcommand*{\captionsource}[2]{%
