@@ -11,11 +11,8 @@
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{color}
-\usepackage[
-backend=biber,
-style=alphabetic,
-citestyle=authoryear
-]{biblatex}
+\usepackage[toc,acronym]{glossaries}
+\usepackage[backend=biber, style=alphabetic, citestyle=authoryear]{biblatex}
 
 % Estilo para trechos de códigos
 \definecolor{codebg}{RGB}{240,240,240}
@@ -37,10 +34,15 @@ citestyle=authoryear
  
 \lstset{style=codigo}
 
+% === Gerar o glossário e lista de abreviaturas se houver (Opcional)
+%\makeglossaries
+%\input{abreviaturas}
+%\input{glossario}
+
 \addbibresource{biblio.bib}
 \renewcommand*{\nameyeardelim}{\addcomma\space}
 
-% Comando para imagens onde se deve destacar a fonte
+% === Comando para imagens onde se deve destacar a fonte
 \newcommand*{\captionsource}[2]{%
   \caption[{#1}]{%
     #1%
@@ -50,65 +52,59 @@ citestyle=authoryear
 }
 
 %\usepackage[hidelinks]{hyperref}
-%-----------------------------------------------------------
+
 \begin{document}
-%-----------Título e Dados do Autor---------------------------
+
+% === Título e Dados do Autor 
 \titulo{COLOQUE SEU TÍTULO AQUI}
 %\subtitulo{Subtítulo} % opcional
 \autor{SEU NOME AQUI} \nome{Primeironome} \ultimonome{Ultimonome}
-%
-%-----------Informe o Curso e Grau----------------------------
+
+% === Curso e Grau
 \bacharelado \curso{Bacharelado em Ciência da Computação} \ano{\textbf{2017}}
 \data{16/02/2017} % data da aprovação
 \cidade{Cidade}
 \estado{Estado}
-%
-%-----------Informações sobre a Instituição-------------------
+
+% === Informações sobre a Instituição
 \instituicao{UNIVERSIDADE ESTADUAL DE SANTA CRUZ} \sigla{UESC}
 \unidadeacademica{DEPARTAMENTO DE CIÊNCIAS EXATAS E TECNOLÓGICAS}
 
-%-----------Informações obtidas na Biblioteca-----------------
+% === Informações obtidas na Biblioteca
 %\CDU{XXX.XX} \areas{1.???  2.???}
 %\npaginas{xx}  % total de páginas do trabalho
-%------Nomes do Orientador, 1o. Examinador e 2o. Examinador-
+
+% === Nomes do Orientador, 1o. Examinador e 2o. Examinador
 \orientador{Orientador}
-%
 %\coorientador{Nome do Co-orientador} % opcional
-%
+
 \examinadorum{Examinador 1}
-%
 \examinadordois{Examinador 2}
-%
 %\examinadortres{Nome do Examinador 3}
-%
 %\examinadorquatro{Nome do Examinador 4}
-%--------- Títulos do Orientador 1o. e 2o. Examinadores ----
+
+% === Títulos do Orientador 1o. e 2o. Examinadores
 \ttorientador{Doutor}
-%
 %\ttcoorientador{Título do Co-orientador} % se digitado \coorientador
-%
+
 \ttexaminadorum{Doutor}
-%
 \ttexaminadordois{Doutor}
-%
 %\ttexaminadortres{Título do Examinador 3}
-%
 %\ttexaminadorquatro{Título do Examinador 4}
-%
-%--------- Funções do 1o. e 2o. Examinadores ---------------
+
+% === Funções do 1o. e 2o. Examinadores
 \funcaoexaminadorum{Professor da Disciplina}
 \funcaoexaminadordois{Professor do Curso de Ciência da Computação}
-%
+
 \maketitle
 
-%-----------Dedicatória (Opcional)--------------------------
+% === Dedicatória (Opcional)
 \begin{dedicatoria}
 Dedico à minha família, por todo o apoio e confiança.
 \end{dedicatoria}
-
 \maketitle
 
-%-----------Agradecimentos (Opcional)-----------------------
+% === Agradecimentos (Opcional)
 %\agradecimento{AGRADECIMENTOS}
 % Digite seu texto de agradecimento aqui
 %\newpage
@@ -116,59 +112,66 @@ Dedico à minha família, por todo o apoio e confiança.
 \include{agradecimentos}
 \newpage
 
-%-----------Epígrafe (Opcional)-----------------------------
+% === Epígrafe (Opcional)
 %\begin{epigrafe}
 %``Lembra que o sono é sagrado e alimenta de horizontes o tempo acordado de viver''.\\
 %\hfill Beto Guedes (Amor de Índio)
 %\end{epigrafe}
 
-%-----------Digite aqui o seu resumo em Português-----------
-%resumo{Resumo}
+% === Inclua seu resumo em Português
+%\resumo{Resumo}
+% Digite seu resumo aqui
 %\noindent Palavras-chave:
+% ou inclua um arquivo .tex como mostrado abaixo
 \input{resumo}
-%
-%-----------Digite aqui o seu resumo em Inglês--------------
-%\resumo{Abstract} 
-%\noindent Keywords:
-\input{abstract}
-%
-%-----------Ou digite aqui o seu resumo em Frances----------
-%\resumo{Résumé} 
-%\noindent Mots-clés: 
 
-%-----------Sumário, lista de figura e de tabela------------
-\listoffigures \thispagestyle{empty}
+% === Digite aqui o seu resumo em Inglês
+%\resumo{Abstract}
+% Digite seu resumo aqui
+%\noindent Keywords:
+% ou inclua um arquivo .tex como mostrado abaixo
+\input{abstract}
+
+% === Ou digite aqui o seu resumo em Francês
+%\resumo{Résumé}
+% Digite seu resumo aqui
+%\noindent Mots-clés: 
+% ou inclua um arquivo .tex como mostrado abaixo
+%\input{resume}
+
+% === Lista de figuras(Opcional), lista de tabelas(Opcional), lista de abreviações(Opcional) e sumário
+%\listoffigures \thispagestyle{empty}
 %\listoftables \thispagestyle{empty}
+%\printglossary[type=\acronymtype]
 \tableofcontents
 
-%-----------Início do Conteúdo------------------------------
+% !!! Início do Conteúdo
 \pagestyle{ruledheader}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Hifenização - Colocar lista de palavras que não devem ser separadas ou que não estão no dicionario português.
-% As palavras do dicionario português já são separadas corretamente pelo LateX
-%
+% === Hifenização
+% Colocar lista de palavras que não devem ser separadas ou que não estão no dicionario português.
 \hyphenation{ Hardware Software }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% A partir daqui coloque seus capítulos. Sugere-se que eles sejam inseridos com o comando \input
-%% Da seguinte maneira:
+% === Capítulos
+% A partir daqui coloque seus capítulos. Sugere-se que eles sejam inseridos com o comando \input
+% Da seguinte maneira: (Devem estar na mesma pasta deste arquivo)
 
-\input{cap01_introducao} 				    % Capítulo Introdução
-%\input{cap_revisao_literatura}             % Capítulo Revisão de Literatura
-\input{cap02_estadoarte}		            % Capítulo Estado da arte
-\input{cap03_materiaismetodos}			    % Capítulo Desenvolvimento
-\input{cap04_resultados}                    % Capítulo Resultados e Discussões
-\input{cap05_conclusoes}				    % Capítulo Conclusões
+\input{cap01_introducao}
+\input{cap02_revisao_literatura}
+\input{cap02_estadoarte}
+\input{cap03_materiaismetodos}
+\input{cap04_resultados}
+\input{cap05_conclusoes}
 
-%------------------------------Bibliografia-------------------------------------
-
-%\bibliographystyle{abnt-alf}
+% === Bibliografia
 \printbibliography % arquivos com as entradas bib.
 
-%------------------------------Apêndices----------------------------------------
-\appendix
-\input{apendices}					
+% === Glossário (Opcional)
+%\printglossary
 
+% === Apêndices (Opcional)
+%\appendix
+%\input{apendices}					
+
+% !!! Fim do documento
 \end{document}
