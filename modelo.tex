@@ -12,16 +12,11 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage[toc,acronym]{glossaries}
-%\usepackage[backend=biber, style=abnt]{biblatex} % Descomente se não estiver usando Sharelatex
-
-% !!! SHARELATEX Workaround para referências ABNT (Deve-se colocar os sobrenomes em maiúscula no .bib)
-\usepackage[backend=biber, style=authortitle]{biblatex} % Comente se não estiver usando Sharelatex
-%\usepackage[hidelinks]{hyperref} % Torna os links da referência clicáveis
-\setlength{\bibhang}{0pt}
+\usepackage[backend=biber, style=abnt]{biblatex}
+%\usepackage[hidelinks]{hyperref} % Utilize se quiser que as referências sejam clicáveis
 
 % === Adição do arquivo de bibliografia
 \addbibresource{biblio.bib}
-%\renewcommand*{\nameyeardelim}{\addcomma\space} % estitlização para citações autor/ano
 
 % === Estilo para trechos de códigos
 \definecolor{codebg}{RGB}{240,240,240}
